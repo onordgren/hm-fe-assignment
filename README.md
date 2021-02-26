@@ -50,8 +50,6 @@ database response in a variable and iterate through that
   * Show to us that you know - how front-end development should be
 done
 
-
-
 When done, push your branch and let us know it’s done by making a pull request.
 
 **Good Luck and have fun!**
