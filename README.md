@@ -11,7 +11,7 @@ This work task is divided into two parts:
 Recreate this button using only HTML/CSS and using as few HTML-elements as
 possible. (HINT: It is possible to solve this using only one `<button>`)
 
-* You can provide a solution for this separately or as a part of the solution for (2) *
+* You can provide a solution for this separately or as a part of the solution for (2)
 ### 2: Implement a simple search application ###
 
 <img src="https://raw.githubusercontent.com/hmfe/54321/master/search.png" style="width: 400px">
