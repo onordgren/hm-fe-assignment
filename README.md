@@ -26,9 +26,9 @@ choice using JavaScript.
   * Selected search result should be saved with date/time stamp (as a
 search history)
   * User should be able to delete a result from the list or delete the entire
-list.
+list
 
-- The application should be responsive, adapting to changes of the viewport. 
+- The application should be responsive, adapting to changes of the viewport
 
 ### What we will look at: ###
 
