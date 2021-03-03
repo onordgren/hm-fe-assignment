@@ -1,8 +1,7 @@
 # WORK TASK #
 
 **Please read this document thoroughly** and plan your work accordingly.
-When ready, fork the repository and create a feature branch. It is in this branch we
-expect your delivery.
+When ready, create a new repository and do your implementation there.
 
 This work task is divided into two parts:
 ### 1: CSS-wizardry ###
@@ -50,6 +49,6 @@ database response in a variable and iterate through that
   * Show to us that you know - how front-end development should be
 done
 
-When done, push your branch and let us know it’s done by making a pull request.
+When done, push your code and send us a link to your repository.
 
 **Good Luck and have fun!**
