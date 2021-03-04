@@ -5,7 +5,8 @@ const input = document.getElementById("input");
 
 button.addEventListener("click", () => {
   const inputValue = input.value;
-  const API_KEY = "AIzaSyBFBmCkfIDsxbWqPyfROe19X3Izi-x9LMk";
+  const API_KEY = config.apiKey;
+  //const API_KEY = "AIzaSyBFBmCkfIDsxbWqPyfROe19X3Izi-x9LMk";
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q="${inputValue}"&langRestrict=us&key=${API_KEY}`;
 
   fetch(API_URL)
