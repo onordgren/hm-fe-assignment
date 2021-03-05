@@ -41,32 +41,16 @@ const searchBooks = async (searchText) => {
 //add search history item
 searchButton.addEventListener("click", () => {
   //create a paragraph every time a user clicks the Search button
-  const paragraph = document.createElement("p");
-  console.log(search);
-  paragraph.classList.add("paragraph-styling");
-  paragraph.innerText = search.value;
-  historyList.appendChild(paragraph);
+  let text = search.value;
+  if (text === "") {
+    alert("please add a title");
+  } else {
+    const newDiv = document.createElement("li");
+    newDiv.innerText = text;
+    historyList.appendChild(newDiv);
+  }
   search.value = "";
 });
-
-// s
-//redux
-// addItem: (state, action) => {
-//     const newItem = {
-//     id: Math.random(...state.items.map((item)=>item.id)),
-//     text: action.payload,
-//     isComplete: false
-//   }
-//   const newItemsList = [...state.items, newItem]
-//   state.items = newItemsList;
-// },
-// removeOne: (state, action) => {
-//   const filteredItems = state.items.filter(item => item.id !== action.payload);
-//   state.items = filteredItems;
-// },
-//   removeAll: (state) => {
-//   state.items = [];
-// }
 
 //Show results in HTML for search items
 const showResults = (matches) => {
@@ -82,11 +66,5 @@ const showResults = (matches) => {
     matchList.innerHTML = html;
   }
 };
-
-//Show results in HTML for history
-// const showHistory = () => {
-
-//   historyList.innerHTML = html;
-// }
 
 search.addEventListener("input", () => searchBooks(search.value));

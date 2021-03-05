@@ -14,33 +14,36 @@
   </head>
 
   <body>
-    <!-- <button type="button" class="delete">Delete
-  <span class="icon-cross">
-    <img src="./assets/iconfinder_Close_1031533.png" type="icon" class="cross">
-  </span>
-  <button> -->
-    <!-- <h1 id="bookTitle">title</h1>
-    <main id="main"></main> -->
-    <h1>Hello, find your favorite book here!</h1>
-    <section class="search-input">
-      <input
-        class="input"
-        id="input"
-        type="text"
-        list="titles"
-        placeholder="Enter book title"
-      />
-    <button id="search-button">Search!</button>
-    </section>
-    <section id="match-list"></section>
-    <section id="history-list">
-      <ul id="list">
-        <li>Atomic habits</li>
-        <li>Rosie Project</li>
-      </ul>
-    </section>
+    <div class="container">
+     <!-- <button type="button" class="delete">Delete
+        <span class="icon-cross">
+          <img src="./assets/iconfinder_Close_1031533.png" type="icon" class="cross">
+        </span>
+        <button>  -->
     
-                    <script src='./config.js'></script> -->
+      <h1>Hello, find your favorite book here!</h1>
+      <section class="search-input">
+        <input class="input" id="input" type="text" list="titles" placeholder="Enter book title" />
+        <button class="btn" id="search-button">Search!</button>
+      </section>
+      <section class="match" id="match-list"></section>
+      <section class="history" id="history-list">
+        <div class="history-text">
+          <p>Search history</p>
+          <button class="btn-clear">Clear history</button>
+        </div>
+        <ul id="list">
+          <li>Atomic habits</li>
+          <li>Rosie Project</li>
+        </ul>
+      </section>
+      <section class="footer">
+        <p>Created by Liza Minican</p>
+          <p>liza.minican@gmail.com</p>
+      </section>
+    </div>
+  
+    <script src='./config.js'></script> 
     <script src="./script.js"></script>
   </body>
 </html>
