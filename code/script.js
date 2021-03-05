@@ -1,8 +1,11 @@
 const search = document.getElementById("input");
 const matchList = document.getElementById("match-list");
+const historyList = document.getElementById("history-list");
+const searchButton = document.getElementById("search-button");
 //const API_KEY = config.apiKey;
 const API_KEY = "AIzaSyBFBmCkfIDsxbWqPyfROe19X3Izi-x9LMk";
-const inputValue = search.value;
+//const inputValue = search.value;
+//console.log(search.value);
 //const inputValue = input.value;
 //const API_URL = `https://www.googleapis.com/books/v1/volumes?q="harry potter"key=${API_KEY}`;
 //const API_URL = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
@@ -35,7 +38,37 @@ const searchBooks = async (searchText) => {
   showResults(matches);
 };
 
-//Show results in HTML
+//add search history item
+searchButton.addEventListener("click", () => {
+  //create a paragraph every time a user clicks the Search button
+  const paragraph = document.createElement("p");
+  console.log(search);
+  paragraph.classList.add("paragraph-styling");
+  paragraph.innerText = search.value;
+  historyList.appendChild(paragraph);
+  search.value = "";
+});
+
+// s
+//redux
+// addItem: (state, action) => {
+//     const newItem = {
+//     id: Math.random(...state.items.map((item)=>item.id)),
+//     text: action.payload,
+//     isComplete: false
+//   }
+//   const newItemsList = [...state.items, newItem]
+//   state.items = newItemsList;
+// },
+// removeOne: (state, action) => {
+//   const filteredItems = state.items.filter(item => item.id !== action.payload);
+//   state.items = filteredItems;
+// },
+//   removeAll: (state) => {
+//   state.items = [];
+// }
+
+//Show results in HTML for search items
 const showResults = (matches) => {
   if (matches.length > 0) {
     const html = matches
@@ -49,5 +82,11 @@ const showResults = (matches) => {
     matchList.innerHTML = html;
   }
 };
-search.addEventListener("input", () => searchBooks(search.value));
 
+//Show results in HTML for history
+// const showHistory = () => {
+
+//   historyList.innerHTML = html;
+// }
+
+search.addEventListener("input", () => searchBooks(search.value));
