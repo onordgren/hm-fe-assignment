@@ -19,7 +19,6 @@ body {
   width: 100%;
   box-sizing: border-box;
   margin: 50px auto;
-  /* text-align: center; */
 }
 
 h1 {
@@ -39,6 +38,7 @@ h1 {
   padding: 18px;
   font-size: 18px;
   display: inline-block;
+  margin-left: 50%;
 }
 .icon-cross {
   background: white;
@@ -161,7 +161,7 @@ h1 {
 .history-text {
   align-self: center;
 }
-
+/* footer */
 .footer {
   background: #383e56;
   align-items: center;
