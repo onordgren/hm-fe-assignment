@@ -2,13 +2,9 @@ const search = document.getElementById("input");
 const matchList = document.getElementById("match-list");
 const historyList = document.getElementById("history-list");
 const searchButton = document.getElementById("search-button");
+const deleteButton = document.getElementById("btn-delete");
+const clearAllButton = document.getElementById("btn-clear");
 //const API_KEY = config.apiKey;
-const API_KEY = "AIzaSyBFBmCkfIDsxbWqPyfROe19X3Izi-x9LMk";
-//const inputValue = search.value;
-//console.log(search.value);
-//const inputValue = input.value;
-//const API_URL = `https://www.googleapis.com/books/v1/volumes?q="harry potter"key=${API_KEY}`;
-//const API_URL = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
 const API_URL =
   "https://www.googleapis.com/books/v1/volumes?q=search+terms&maxResults=40";
 //const API_URL = `https://www.googleapis.com/books/v1/volumes?q="${inputValue}"&langRestrict=us&key=${API_KEY}`;
@@ -19,7 +15,6 @@ const searchBooks = async (searchText) => {
   const data = await res.json();
   console.log(data);
   const newBooks = data.items.map((book) => {
-    //const author = book.volumeInfo.authors;
     const title = book.volumeInfo.title;
     //console.log(title);
     return { title };
@@ -40,17 +35,56 @@ const searchBooks = async (searchText) => {
 
 //add search history item
 searchButton.addEventListener("click", () => {
-  //create a paragraph every time a user clicks the Search button
-  let text = search.value;
-  if (text === "") {
+  //create a div with a paragraph, a delete button and a time stamp every time a user clicks the Search button
+  let input = search.value;
+  if (input === "") {
     alert("please add a title");
   } else {
-    const newDiv = document.createElement("li");
-    newDiv.innerText = text;
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("history-item");
+
+    const text = document.createElement("p");
+    text.classList.add("history-text");
+
+    const button = document.createElement("button");
+    button.classList.add("btn-delete");
+
+    const time = document.createElement("p");
+    time.classList.add("history-text");
+    let timestamp = new Date().toLocaleString();
+
+    text.innerText = input;
+    button.innerHTML = "ⓧ";
+    time.innerHTML = timestamp;
+
     historyList.appendChild(newDiv);
+    newDiv.appendChild(text);
+    newDiv.appendChild(time);
+    newDiv.appendChild(button);
   }
+
   search.value = "";
 });
+
+const deleteItem = (e) => {
+  console.log(e.target);
+  if (e.target.className === "history-item") {
+    e.target.remove();
+  }
+};
+historyList.addEventListener("click", deleteItem);
+
+const clearList = (e) => {
+  const items = document.querySelectorAll("history-item");
+  items.forEach((item) => {
+    item.remove();
+  });
+  console.log(items);
+};
+
+window.onload = function () {
+  clearAllButton.addEventListener("click", clearList);
+};
 
 //Show results in HTML for search items
 const showResults = (matches) => {
@@ -58,9 +92,7 @@ const showResults = (matches) => {
     const html = matches
       .map(
         (match) => `
-    <div class="card">
-    <h4>${match.title}</h4>
-    <div>`
+    <h4>${match.title}</h4>`
       )
       .join("");
     matchList.innerHTML = html;
