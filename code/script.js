@@ -1,8 +1,8 @@
-const search = document.getElementById("input");
+const search = document.getElementById("search");
 const matchList = document.getElementById("match-list");
 const historyList = document.getElementById("history-list");
 const searchButton = document.getElementById("search-button");
-const clearAllButton = document.getElementById("btn-clear");
+const clearAllButton = document.getElementById("clear");
 const API_URL =
   "https://www.googleapis.com/books/v1/volumes?q=search+terms&maxResults=40";
 
