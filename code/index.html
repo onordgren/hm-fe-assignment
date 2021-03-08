@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H&M code test</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <button type="button" class="delete">Delete
+    <span class="icon-cross">
+      <img src="./assets/iconfinder_Close_1031533.png" type="icon" class="cross">
+    </span>
+  </button>
+      <div class="container">
+        <h1>Hello, find your favorite book here!</h1>
+        <!-- search module -->
+        <section class="search-input">
+          <input class="input" id="search" type="text" list="titles" placeholder="Enter book title" />
+          <button class="btn" id="search-button">Search!</button>
+        </section>
+        <!-- auto complete results -->
+        <section class="match" id="match-list"></section>
+        <!-- search history -->
+        <section class="history" id="history-list">
+          <div class="history-intro">
+            <p>Search history</p>
+            <button class="btn-clear" id="clear">Clear history</button>
+          </div>
+          <!-- history list items-->
+          <div class="history-item">
+            <p class="history-text">Book Example 1</p>
+            <p class="history-text">12/2/2018, 2:30:32 PM</p>
+            <button type="button" class="btn-delete">ⓧ</button>
+          </div>
+          <div class="history-item">
+            <p class="history-text">Book Example 2</p>
+            <p class="history-text">12/2/2018, 2:30:32 PM</p>
+            <button type="button" class="btn-delete">ⓧ</button>
+          </div>
+        </section>
+        <section class="footer">
+          <p>Created by Liza Minican</p>
+          <p>liza.minican@gmail.com</p>
+        </section>
+      </div>
+      <script src="./script.js"></script>
+</body>
+</html>

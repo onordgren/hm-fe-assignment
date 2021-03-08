@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap");
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: #eceff1;
+}
+.container {
+  background-color: #fafafa;
+  min-height: 400px;
+  height: 100%;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 50px auto;
+}
+
+h1 {
+  margin: 12px 0;
+  padding-top: 20px;
+  color: #fb743e;
+  font-family: "Cormorant";
+  text-align: center;
+}
+
+/* delete button */
+.delete {
+  background-color: #f2a54f;
+  color: black;
+  font-weight: bold;
+  border: 2px solid grey;
+  padding: 18px;
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 35%;
+}
+.icon-cross {
+  background: white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.cross {
+  margin-top: 15px;
+  height: 20px;
+  width: 20px;
+}
+
+/* input field  */
+.search-input {
+  text-align: center;
+}
+.input {
+  padding: 5px 0;
+  width: 70%;
+  height: 30px;
+  font-size: 18px;
+  font-style: italic;
+  text-decoration: none;
+  border: none;
+  border-bottom: 1px solid #fb743e;
+  text-align: left;
+  transition: padding 0.3s ease;
+}
+.input:focus {
+  outline: none;
+  padding: 0.8rem;
+}
+
+.btn {
+  padding: 5px 14px;
+  background-color: #fb743e;
+  border: none;
+  color: #f7eff1;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+.btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+
+/* match and history sections */
+.match {
+  color: #fb743e;
+  background-color: #fff;
+  width: 70%;
+  margin-left: 20px;
+}
+
+.btn-clear {
+  border: none;
+  border-bottom: 1px solid #fb743e;
+  background-color: transparent;
+  transition: padding 0.3s ease;
+  font-size: 16px;
+}
+.btn-clear:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.btn-clear:focus {
+  outline: none;
+}
+
+.history {
+  height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+}
+.history-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.history-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 10px 5px;
+  background-color: #fff;
+  margin: 12px 0;
+  box-shadow: 0 2px 8px lightgrey;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+.history-item:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.btn-delete {
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  color: #fb743e;
+}
+.btn-delete:hover {
+  cursor: pointer;
+}
+.btn-delete:focus {
+  outline: none;
+}
+
+.history-text {
+  align-self: center;
+}
+/* footer */
+.footer {
+  background: #383e56;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.footer p {
+  font-weight: bold;
+  color: #f7eff1;
+}
