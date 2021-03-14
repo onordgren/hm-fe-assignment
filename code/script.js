@@ -1,28 +1,28 @@
 const search = document.getElementById("search");
 const matchList = document.getElementById("match-list");
 const historyList = document.getElementById("history-list");
+//const historyItem = document.getElementById("history-item");
 const searchButton = document.getElementById("search-button");
 const clearAllButton = document.getElementById("clear");
-const API_URL =
-  "https://www.googleapis.com/books/v1/volumes?q=search+terms&maxResults=40";
+const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40`;
 
 //search books and filter
 //autocomplete logic
 const searchBooks = async (searchText) => {
   const res = await fetch(API_URL);
   const data = await res.json();
-  const newBooks = data.items.map((book) => {
+  const books = data.items.map((book) => {
     const title = book.volumeInfo.title;
     return { title };
-  });
-  let matches = newBooks.filter((book) => {
-    const regex = new RegExp(`^${searchText}`, "gi");
-    return book.title.match(regex);
   });
   if (searchText.length === 0) {
     matches = [];
     matchList.innerHTML = "";
   }
+  let matches = books.filter((book) => {
+    const regex = new RegExp(`^${searchText}`, "gi");
+    return book.title.match(regex);
+  });
   showResults(matches);
 };
 
@@ -72,18 +72,18 @@ searchButton.addEventListener("click", () => {
   search.value = "";
 });
 //function that deletes a history item
-const deleteItem = (e) => {
+const deleteHistoryItem = (e) => {
   if (e.target.className === "btn-delete") {
     e.target.parentNode.remove();
   }
 };
-historyList.addEventListener("click", deleteItem);
+historyList.addEventListener("click", deleteHistoryItem);
 
 //function that deletes the whole history
-const clearList = (e) => {
+const deleteAllHistory = (e) => {
   const items = document.querySelectorAll(".history-item");
   items.forEach((item) => {
     item.remove();
   });
 };
-clearAllButton.addEventListener("click", clearList);
+clearAllButton.addEventListener("click", deleteAllHistory);
